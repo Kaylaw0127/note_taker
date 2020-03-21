@@ -15,6 +15,13 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../../index.html"));
   });
 
+  // Route for notes page
+app.get("/notes", (req, res) => {
+    res.sendFile(path.join(__dirname, "../../notes.html"))
+})
+
+
+
 
 // Runs the server on the specified port
 app.listen(PORT, () => {
