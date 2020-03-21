@@ -21,7 +21,7 @@ app.get("/notes", (req, res) => {
     res.sendFile(path.join(__dirname, "./notes.html"))
 })
 
-//index.js route
+// Index.js route
 app.get("/assets/js/index.js", function (req, res){
     res.sendFile(path.join(__dirname, "./assets/js/index.js"))
 })
@@ -34,6 +34,7 @@ app.get("/api/notes", function (req, res) {
     })
 });
 
+// Add note
 app.post('/api/notes', function (req, res) {
     const newNote = req.body
     newNote.routeName = newNote.title.replace(/\s+/g, "").toLowerCase()
@@ -45,7 +46,6 @@ app.post('/api/notes', function (req, res) {
 
     res.json(newNote)
 })
-
 
 // Runs the server on the specified port
 app.listen(PORT, () => {
