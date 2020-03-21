@@ -34,13 +34,12 @@ app.get("/api/notes", function (req, res) {
     })
 });
 
-app.post(`/api/notes`, function (req, res) {
+app.post('/api/notes', function (req, res) {
     const newNote = req.body
     newNote.routeName = newNote.title.replace(/\s+/g, "").toLowerCase()
     newNote.id = newNote.title.replace(/\s+/g, "").toUpperCase()
     
-    console.log(`receiving data`) 
-    console.log(`body is `, req.body)
+    console.log('new note: ', req.body) 
 
     notes.push(newNote)
 
